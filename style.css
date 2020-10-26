@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Style.css
 body {
   background-image: url("https://elearningart.com/wp-content/uploads/2015/10/Slide3103.gif");
   background-color: green;
@@ -13,6 +14,19 @@ div.b {
 
   width: 50%;
 }
+=======
+ body  {
+    background-color:green;
+    }
+div.b{
+         border: 1px solid black;
+         margin-top: 100px;
+         margin-bottom: 100px;
+         margin-right: 555px;
+         margin-left: 590px;
+         background-color:yellow;
+     }
+>>>>>>> dca908455b9be7bcb20dbbc788f0b779525f8758:style.css
 
 .button {
   background-color: tomato;
@@ -53,6 +67,7 @@ div.h {
   font-size: 40px;
   text-align: center;
 }
+<<<<<<< HEAD:Style.css
 
 .row-container {
   display: flex;
@@ -83,3 +98,5 @@ fa:hover,
   width: 5em;
   text-align: center;
 }
+=======
+>>>>>>> dca908455b9be7bcb20dbbc788f0b779525f8758:style.css
