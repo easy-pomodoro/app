@@ -1,34 +1,85 @@
- <style>
-    body  {
-    background-color:green;
-    }
-div.b{
-         border: 1px solid black;
-         margin-top: 100px;
-         margin-bottom: 100px;
-         margin-right: 555px;
-         margin-left: 590px;
-         background-color:yellow;
-     }
+body {
+  background-image: url("https://elearningart.com/wp-content/uploads/2015/10/Slide3103.gif");
+  background-color: green;
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  font-family: 'Arial';
+}
+
+div.b {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  width: 50%;
+}
 
 .button {
-background-color: f44336;
-border:none;
-color:blue;
-padding: 10x 2px;
-text-align:center;
-text-decoration:none;
-display: inline-block;
-font-size:16px;
-margin: 10px 10px;
-cursor: pointer;
+  background-color: tomato;
+  border: none;
+  color: blue;
+  padding: 10x 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 17%,
+
+
+  cursor: pointer;
+  border-radius: 1em;
 }
-.button1 {padding: 10px 10px;}
-.button2 {padding: 10px 10px;}
+
+
+.button1 {
+  padding: 5px 5px;
+
+}
+
+.button1:hover {
+  background-color: white;
+}
+
+.button2 {
+  padding: 5px 5px;
+
+}
+
+.button2:hover {
+  background-color: white;
+}
 
 div.h {
- font-size:40px;
- text-align: center;
+  font-size: 40px;
+  text-align: center;
 }
 
-</style>
+.row-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7em;
+}
+
+.fa,
+.fa-bars {
+  font-size: 50px;
+}
+
+.heading {
+  margin-top: -90px;
+}
+
+fa:hover,
+.fa-bars:hover {
+  color: tomato;
+}
+
+.timer {
+  border: 2px solid black;
+  background-color:white;
+  margin: 2em;
+  width: 5em;
+  text-align: center;
+}
