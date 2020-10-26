@@ -10,85 +10,69 @@ div.b {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-
+  
   width: 50%;
 }
- body  {
-    background-color:green;
-    }
-div.b{
-         border: 1px solid black;
-         margin-top: 100px;
-         margin-bottom: 100px;
-         margin-right: 555px;
-         margin-left: 590px;
-         background-color:yellow;
-     }
+
 .button {
-  background-color: tomato;
+  background-color:tomato;
   border: none;
   color: blue;
-  padding: 10x 10px;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 17%,
-
-
-  cursor: pointer;
+   margin: 17% 0%;
+   cursor: pointer;
   border-radius: 1em;
 }
 
 
 .button1 {
-  padding: 5px 5px;
+  padding: 10px 5px;
 
 }
 
 .button1:hover {
-  background-color: white;
+   background-color: white;
 }
 
 .button2 {
-  padding: 5px 5px;
+  padding: 10px 5px;
 
 }
-
 .button2:hover {
-  background-color: white;
+   background-color: white;
 }
 
 div.h {
   font-size: 40px;
   text-align: center;
 }
+
 .row-container {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-top: 7em;
 }
 
-.fa,
-.fa-bars {
+.fa, .fa-bars {
   font-size: 50px;
 }
+.heading{ 
+margin:-12% 0%;
 
-.heading {
-  margin-top: -90px;
 }
-
-fa:hover,
-.fa-bars:hover {
-  color: tomato;
-}
-
-.timer {
-  border: 2px solid black;
-  background-color:white;
-  margin: 2em;
-  width: 5em;
-  text-align: center;
-}
+fa:hover, .fa-bars:hover {
+   color:tomato;
+   }
+   
+   .timer {
+     border: 2px solid black;
+     background-color: white;
+ height:1em;
+     width: 5em ;
+     text-align: center;
+   }
