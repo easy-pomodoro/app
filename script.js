@@ -51,6 +51,7 @@ stopButton.addEventListener('click', function() {
 
 resetButton.addEventListener('click', function() {
 
+if(window.intervalOne)
 	clearInterval(intervalOne);
 	timerContainer.innerText = currentTime;
 })
@@ -58,6 +59,7 @@ resetButton.addEventListener('click', function() {
 pomodoroButton.addEventListener('click', function() {
 
 	((currentTime === SHORT_BREAK) ? shortBreakButton : longBreakButton).classList.remove('btn-active');
+	if(window.intervalOne)
 	clearInterval(intervalOne);
 	currentTime = POMODORO;
 	timerContainer.innerText = currentTime;
@@ -68,6 +70,7 @@ pomodoroButton.addEventListener('click', function() {
 shortBreakButton.addEventListener('click', function() {
 
 	((currentTime === POMODORO) ? pomodoroButton : longBreakButton).classList.remove('btn-active');
+	if(window.intervalOne)
 	clearInterval(intervalOne);
 	currentTime = SHORT_BREAK;
 	timerContainer.innerText = currentTime;
@@ -77,6 +80,7 @@ shortBreakButton.addEventListener('click', function() {
 longBreakButton.addEventListener('click', function() {
 
 ((currentTime === SHORT_BREAK) ? shortBreakButton : pomodoroButton).classList.remove('btn-active');
+if(window.intervalOne)
 clearInterval(intervalOne);
 	currentTime = LONG_BREAK;
 	timerContainer.innerText = currentTime;
