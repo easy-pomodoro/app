@@ -17,7 +17,7 @@ div.b {
 
   width: 50%;
 }
-/*
+
 .button {
   background-color: tomato;
   border: none;
@@ -26,11 +26,11 @@ div.b {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 5em 1em;
+  margin: 2em 5%;
   cursor: pointer;
   border-radius: 1em;
 }
-*/
+
 .btn-active {
   background-color: white;
 }
@@ -46,8 +46,7 @@ div.h {
   justify-content: center;
   }
 
-.fa,
-.fa-bars {
+.fa,.fa-bars {
   font-size: 50px;
 }
 .heading {
@@ -65,10 +64,13 @@ fa:hover,
   border-radius: 50%;
   text-align: center;
   font-size: xx-large;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 main {
-  margin-top: 11em;
+  margin-top: 7em;
 }
 
 @media(max-width: 477px) {
