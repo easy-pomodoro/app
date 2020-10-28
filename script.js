@@ -58,6 +58,7 @@ resetButton.addEventListener('click', function() {
 pomodoroButton.addEventListener('click', function() {
 
 	((currentTime === SHORT_BREAK) ? shortBreakButton : longBreakButton).classList.remove('btn-active');
+	clearInterval(intervalOne);
 	currentTime = POMODORO;
 	timerContainer.innerText = currentTime;
 	pomodoroButton.classList.add('btn-active');
@@ -67,6 +68,7 @@ pomodoroButton.addEventListener('click', function() {
 shortBreakButton.addEventListener('click', function() {
 
 	((currentTime === POMODORO) ? pomodoroButton : longBreakButton).classList.remove('btn-active');
+	clearInterval(intervalOne);
 	currentTime = SHORT_BREAK;
 	timerContainer.innerText = currentTime;
 	shortBreakButton.classList.add('btn-active');
@@ -75,7 +77,30 @@ shortBreakButton.addEventListener('click', function() {
 longBreakButton.addEventListener('click', function() {
 
 ((currentTime === SHORT_BREAK) ? shortBreakButton : pomodoroButton).classList.remove('btn-active');
+clearInterval(intervalOne);
 	currentTime = LONG_BREAK;
 	timerContainer.innerText = currentTime;
 	longBreakButton.classList.add('btn-active');
 })
+
+function notifyMe() {
+  // Let's check if the browser supports notifications
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+
+  // Let's check whether notification permissions have already been granted
+  else if (Notification.permission === "granted") {
+    // If it's okay let's create a notification
+    var notification = new Notification("Hi there!");
+  }
+
+  // Otherwise, we need to ask the user for permission
+  else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(function (permission) {
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        var notification = new Notification("Hi there!");
+      }
+    });
+  }}
