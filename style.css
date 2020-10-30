@@ -1,10 +1,10 @@
-* {
+*{
   box-sizing: border-box;
 }
 
 body {
-  background-image: url("./images/background-img.gif");
-  background-color: green;
+  background-image: url("https://www.pexels.com/photo/analog-clock-sketch-in-black-surface-745365/");
+  background-color:none;
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   font-family: "Arial";
@@ -19,17 +19,24 @@ div.b {
 }
 
 .button {
-  background-color: tomato;
-  border: none;
+  background-color:green;
+  border:none;
   padding: 10px 10px;
   text-align: center;
-  text-decoration: none;
+  text-decoration: bold;
   display: inline-block;
   font-size: 16px;
   margin: 2em 5%;
   cursor: pointer;
   border-radius: 1em;
 }
+.start-button{background-color:green;}
+.stop-button{background-color:red;}
+.reset-button{background-color:grey;}
+.pomodoro-button{background-color:violet;}
+.short-break-button{background-color:violet;}
+.long-break-button{background-color:violet;}
+
 
 .btn-active {
   background-color: white;
@@ -52,6 +59,9 @@ div.h {
 .heading {
   margin-top: -2em;
   margin-bottom: 0;
+  color:#E50914;
+   font-family:"Graphique";
+   background-color:black;
 }
 fa:hover,
 .fa-bars:hover {
@@ -78,5 +88,6 @@ main {
   .heading {
     margin-top: 0;
     margin-bottom: -1em;
+    
   }
 }
