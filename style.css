@@ -4,7 +4,7 @@
 
 body {
   background-image: url("https://www.pexels.com/photo/analog-clock-sketch-in-black-surface-745365/");
-  background-color:none;
+  background-color:darkwhite;
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   font-family: "Arial";
@@ -28,14 +28,13 @@ div.b {
   font-size: 16px;
   margin: 2em 5%;
   cursor: pointer;
-  border-radius: 1em;
 }
 .start-button{background-color:green;}
 .stop-button{background-color:red;}
 .reset-button{background-color:grey;}
-.pomodoro-button{background-color:violet;}
-.short-break-button{background-color:violet;}
-.long-break-button{background-color:violet;}
+.pomodoro-button{background-color:skyblue;}
+.short-break-button{background-color:skyblue;}
+.long-break-button{background-color:skyblue;}
 
 
 .btn-active {
@@ -57,11 +56,11 @@ div.h {
   font-size: 50px;
 }
 .heading {
-  margin-top: -2em;
+  margin-top: -1.55em;
   margin-bottom: 0;
-  color:#E50914;
+  color:white;
    font-family:"Graphique";
-   background-color:black;
+   background-color:orange;
 }
 fa:hover,
 .fa-bars:hover {
@@ -69,11 +68,12 @@ fa:hover,
 }
 
 .timer {
-  background-color: white;
+  background-color:darkwhite;
   padding: 1em;
   border-radius: 50%;
   text-align: center;
-  font-size: xx-large;
+  text-decoration: bold;
+  font-size: 50px;
   width: 200px;
   margin-right: auto;
   margin-left: auto;
