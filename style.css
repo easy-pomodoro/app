@@ -19,8 +19,6 @@ div.b {
 }
 
 .button {
-  background-color:green;
-  border:none;
   padding: 10px 10px;
   text-align: center;
   text-decoration: bold;
@@ -28,10 +26,28 @@ div.b {
   font-size: 16px;
   margin: 2em 5%;
   cursor: pointer;
+    border: 1px solid black;
 }
-.start-button{background-color:green;}
-.stop-button{background-color:red;}
-.reset-button{background-color:grey;}
+
+.upper-button {
+    
+
+    margin: 0;
+width: 300px;
+}
+
+.start-button{background-color:#34eb83;}
+.start-button:hover {
+        background-color: #29c453;
+}
+.stop-button{background-color:#fa4639;}
+.stop-button:hover {
+        background-color: #e83225;
+}
+.reset-button{background-color:#b0adac;}
+.reset-button:hover {
+    background-color: #948f8e;
+}
 .pomodoro-button{background-color:skyblue;}
 .short-break-button{background-color:skyblue;}
 .long-break-button{background-color:skyblue;}
@@ -108,3 +124,6 @@ position: absolute;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    border: 1px solid black;
+    padding: 20px;
+}
