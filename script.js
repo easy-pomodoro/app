@@ -115,23 +115,13 @@ clearInterval(intervalOne);
 })
 
 function notifyMe(message) {
-  if (!("Notification" in window)) {
-    alert("This browser does not support desktop notification");
-  }
 
-  else if (Notification.permission === "granted") {
+
+if (Notification.permission === "granted") {
 
     var notification = new Notification(message);
   }
-
-  else if (Notification.permission !== "denied") {
-    Notification.requestPermission().then(function (permission) {
-
-      if (permission === "granted") {
-        var notification = new Notification(message);
-      }
-    });
-  }}
+}
 
   let settingsClicked = false;
   settingsButton.addEventListener('click', function() {
@@ -171,3 +161,13 @@ settingsClicked = false;
 	pomodoroButton.classList.add('btn-active');
   
 };
+
+function askNotificationPermission() {
+    
+      if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+      }
+     else if (Notification.permission !== "denied") {
+    Notification.requestPermission();
+  }
+}
