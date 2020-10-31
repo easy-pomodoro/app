@@ -140,7 +140,7 @@ main {
   flex-flow: column nowrap;
   justify-content: space-between;
 
-  background-color:skyblue;
+  background: linear-gradient(black, white);
   z-index: 2;
   position: absolute;
   border: 1px solid black;
