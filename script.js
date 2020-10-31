@@ -1,7 +1,12 @@
-let POMODORO = '25:00';
-let SHORT_BREAK = '05:00';
-let LONG_BREAK = '30:00';
-let currentTime = POMODORO; 
+const pomodoroTime = document.querySelector('#pomodoro-time');
+const sBreak = document.querySelector('#sbreak');
+const lBreak = document.querySelector('#lbreak');
+
+pomodoroTime.value = "25:00";
+sBreak.value = "05:00";
+lBreak.value = "30:00";
+
+
 
 const pomodoroButton = document.querySelector('.pomodoro-button');
 const shortBreakButton = document.querySelector('.short-break-button');
@@ -10,6 +15,17 @@ const timerContainer = document.querySelector('.timer');
 const startButton = document.querySelector('.start-button');
 const stopButton = document.querySelector('.stop-button');
 const resetButton = document.querySelector('.reset-button');
+const settingsButton = document.querySelector('.settings-button');
+const header = document.querySelector('header');
+const settingsPopup = document.querySelector('.settings-popup');
+const saveButton = document.querySelector('.save-button');
+
+let POMODORO;
+let SHORT_BREAK;
+let LONG_BREAK;
+let currentTime;
+renderTime();
+ 
 
 let duration = null;
 let minutes = null;
@@ -27,10 +43,19 @@ function startTimer(duration) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
         timerContainer.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
+/*
+        if (--timer <= 0) {
+            timer = '00:00';
+            notifyMe();
+            return;
         }
+  */
+  
+  timer--;
+  if (timer < 0) {
+  clearInterval(intervalOne);
+  notifyMe("Times Up");
+  }
     }, 1000);
 }
 
@@ -40,31 +65,33 @@ timerContainer.onload = function () {
 };
 
 startButton.addEventListener('click', function() {
-
+	if (!window.intervalOne)
 	startTimer(parseInt(timerContainer.innerText.slice(0, 2) * 60) + parseInt(timerContainer.innerText.slice(3)));
 });
 
 stopButton.addEventListener('click', function() {
 
 	clearInterval(intervalOne);
+  window.intervalOne = null;
 })
 
 resetButton.addEventListener('click', function() {
 
 if(window.intervalOne)
 	clearInterval(intervalOne);
+  window.intervalOne = null;
 	timerContainer.innerText = currentTime;
 })
 
 pomodoroButton.addEventListener('click', function() {
-
-	((currentTime === SHORT_BREAK) ? shortBreakButton : longBreakButton).classList.remove('btn-active');
+    
+    	((currentTime === SHORT_BREAK) ? shortBreakButton : longBreakButton).classList.remove('btn-active');
 	if(window.intervalOne)
 	clearInterval(intervalOne);
 	currentTime = POMODORO;
 	timerContainer.innerText = currentTime;
 	pomodoroButton.classList.add('btn-active');
-
+  
 });
 
 shortBreakButton.addEventListener('click', function() {
@@ -87,24 +114,60 @@ clearInterval(intervalOne);
 	longBreakButton.classList.add('btn-active');
 })
 
-function notifyMe() {
-  // Let's check if the browser supports notifications
+function notifyMe(message) {
   if (!("Notification" in window)) {
     alert("This browser does not support desktop notification");
   }
 
-  // Let's check whether notification permissions have already been granted
   else if (Notification.permission === "granted") {
-    // If it's okay let's create a notification
-    var notification = new Notification("Hi there!");
+
+    var notification = new Notification(message);
   }
 
-  // Otherwise, we need to ask the user for permission
   else if (Notification.permission !== "denied") {
     Notification.requestPermission().then(function (permission) {
-      // If the user accepts, let's create a notification
+
       if (permission === "granted") {
-        var notification = new Notification("Hi there!");
+        var notification = new Notification(message);
       }
     });
   }}
+
+  let settingsClicked = false;
+  settingsButton.addEventListener('click', function() {
+    
+      if (!settingsClicked) {
+            
+
+          settingsPopup.classList.remove('settings-popup-hidden');
+          settingsPopup.classList.add('settings-popup-flex');
+          settingsClicked = true;
+      } else { 
+          
+          settingsPopup.classList.remove('settings-popup-flex');
+          settingsPopup.classList.add('settings-popup-hidden');
+          settingsClicked = false;
+    }
+  });
+  
+  
+  saveButton.addEventListener('click', function() {
+        
+      settingsPopup.classList.remove('settings-popup-flex');
+          settingsPopup.classList.add('settings-popup-hidden');
+settingsClicked = false;
+          renderTime();
+  });
+  
+  function renderTime() {
+    POMODORO = pomodoroTime.value;
+    SHORT_BREAK = sBreak.value;
+    LONG_BREAK = lBreak.value;  
+       	((currentTime === SHORT_BREAK) ? shortBreakButton : longBreakButton).classList.remove('btn-active');
+	if(window.intervalOne)
+	clearInterval(intervalOne);
+	currentTime = POMODORO;
+	timerContainer.innerText = currentTime;
+	pomodoroButton.classList.add('btn-active');
+  
+};

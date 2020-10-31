@@ -91,3 +91,12 @@ main {
     
   }
 }
+
+.settings-popup-hidden {
+        display: none;
+}
+
+.settings-popup-flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
