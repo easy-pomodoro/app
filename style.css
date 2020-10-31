@@ -3,8 +3,7 @@
 }
 
 body {
-  background-color: darkwhite;
-  background-repeat: no-repeat;
+  
   background-size: 100vw 100vh;
   font-family: "Arial";
   padding: 0;
@@ -100,11 +99,6 @@ div.h {
   margin-bottom: 0;
   color: white;
   font-family: "Graphique";
-}
-
-fa:hover,
-.fa-bars:hover {
-  color: tomato;
 }
 
 .timer {
