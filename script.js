@@ -1,3 +1,5 @@
+askNotificationPermission();
+
 const pomodoroTime = document.querySelector('#pomodoro-time');
 const sBreak = document.querySelector('#sbreak');
 const lBreak = document.querySelector('#lbreak');
