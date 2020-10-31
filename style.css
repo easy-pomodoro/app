@@ -8,6 +8,7 @@ body {
   font-family: "Arial";
   padding: 0;
   background: linear-gradient(black, white);
+  height: 100vh;
   margin: 0;
 }
 
