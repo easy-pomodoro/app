@@ -1,4 +1,4 @@
-askNotificationPermission();
+window.onload = function() {askNotificationPermission();}
 
 const pomodoroTime = document.querySelector('#pomodoro-time');
 const sBreak = document.querySelector('#sbreak');
