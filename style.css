@@ -92,11 +92,19 @@ main {
   }
 }
 
+
+.settings-button {
+        display: block;
+        margin-top: 5em;
+}
 .settings-popup-hidden {
         display: none;
 }
 
 .settings-popup-flex {
+background-color: white;
+z-index: 2;
+position: absolute;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
